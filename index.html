@@ -1,0 +1,1448 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kavya Automobile | Premium E-Garuda Electric Scooters</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #00ff9d;
+            --primary-dark: #00cc7d;
+            --bg-dark: #000000;
+            --bg-card: #0a0a0a;
+            --text-light: #ffffff;
+            --text-gray: #999999;
+            --accent: #00ff9d;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-light);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            backdrop-filter: blur(20px);
+            background: rgba(0, 0, 0, 0.7);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            background: rgba(0, 0, 0, 0.95);
+            box-shadow: 0 4px 30px rgba(0, 255, 157, 0.1);
+        }
+
+        .nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo img {
+            height: 45px;
+            width: auto;
+        }
+
+        .logo-text {
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, var(--primary), #00ccff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-gray);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .cta-btn {
+            background: var(--primary);
+            color: #000 !important;
+            padding: 12px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .cta-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 255, 157, 0.3);
+        }
+
+        /* Hero - Full Screen */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-top: 80px;
+            background: 
+                linear-gradient(135deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.7) 100%),
+                url('background.png') center/cover no-repeat;
+            background-attachment: fixed;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at top, rgba(0, 255, 157, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .hero-text {
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 255, 157, 0.1);
+            border: 1px solid rgba(0, 255, 157, 0.3);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 30px;
+            letter-spacing: 0.5px;
+        }
+
+        .hero h1 {
+            font-size: 80px;
+            font-weight: 900;
+            line-height: 0.95;
+            margin-bottom: 30px;
+            letter-spacing: -2px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #ffffff, var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-subtitle {
+            font-size: 22px;
+            color: var(--text-gray);
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 18px 36px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 16px;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: #000;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(0, 255, 157, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--text-light);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary);
+            background: rgba(0, 255, 157, 0.1);
+            color: var(--primary);
+        }
+
+        .hero-visual {
+            position: relative;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 30px 60px rgba(0, 255, 157, 0.2));
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Section Styling */
+        .section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 100px 40px;
+        }
+
+        /* Showroom Showcase Section */
+        .showroom-section {
+            position: relative;
+            min-height: 600px;
+            margin: 100px 0;
+            overflow: hidden;
+        }
+
+        .showroom-content {
+            position: relative;
+            width: 100%;
+            height: 600px;
+            background: 
+                linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 100%),
+                url('background.png') center/cover no-repeat;
+            background-attachment: fixed;
+        }
+
+        .showroom-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(ellipse at center, rgba(0, 255, 157, 0.1) 0%, transparent 70%);
+        }
+
+        .showroom-text {
+            text-align: center;
+            max-width: 800px;
+            padding: 0 40px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .showroom-title {
+            font-size: 64px;
+            font-weight: 900;
+            margin: 20px 0 30px;
+            letter-spacing: -1px;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .showroom-subtitle {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.8;
+            margin-bottom: 40px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-tag {
+            display: inline-block;
+            background: rgba(0, 255, 157, 0.1);
+            border: 1px solid rgba(0, 255, 157, 0.3);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .section-title {
+            font-size: 60px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .section-subtitle {
+            font-size: 20px;
+            color: var(--text-gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .feature-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 40px;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at top left, rgba(0, 255, 157, 0.05), transparent);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+
+        .feature-card:hover {
+            border-color: rgba(0, 255, 157, 0.3);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(0, 255, 157, 0.15);
+        }
+
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .feature-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .feature-desc {
+            color: var(--text-gray);
+            line-height: 1.8;
+        }
+
+        /* Models Section */
+        .models-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .model-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 24px;
+            overflow: hidden;
+            transition: all 0.4s;
+            position: relative;
+        }
+
+        .model-card:hover {
+            border-color: rgba(0, 255, 157, 0.4);
+            transform: translateY(-10px);
+            box-shadow: 0 30px 70px rgba(0, 255, 157, 0.2);
+        }
+
+        .model-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--primary);
+            color: #000;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            z-index: 10;
+        }
+
+        .model-image-wrap {
+            position: relative;
+            height: 300px;
+            background: linear-gradient(135deg, rgba(0, 255, 157, 0.03), rgba(0, 255, 157, 0.01));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .model-image {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            transition: transform 0.4s;
+        }
+
+        .model-card:hover .model-image {
+            transform: scale(1.05);
+        }
+
+        .model-info {
+            padding: 30px;
+        }
+
+        .model-brand {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .model-name {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .model-tagline {
+            color: var(--text-gray);
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        .model-specs {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .model-specs li {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+
+        .spec-icon {
+            font-size: 18px;
+        }
+
+        .model-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn-small {
+            padding: 12px 24px;
+            font-size: 14px;
+        }
+
+        /* Offer Section */
+        .offer {
+            background: linear-gradient(135deg, var(--primary), #00ccff);
+            padding: 80px 40px;
+            margin: 100px 0;
+            text-align: center;
+        }
+
+        .offer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .offer-title {
+            font-size: 50px;
+            font-weight: 900;
+            color: #000;
+            margin-bottom: 50px;
+            letter-spacing: -1px;
+        }
+
+        .deals {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .deal {
+            background: rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            border: 2px solid rgba(0, 0, 0, 0.2);
+        }
+
+        .deal-price {
+            font-size: 42px;
+            font-weight: 900;
+            color: #000;
+            margin-bottom: 10px;
+        }
+
+        .deal-desc {
+            font-size: 18px;
+            font-weight: 600;
+            color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* EMI Calculator Section */
+        .emi-calculator {
+            background: var(--bg-card);
+            border: 1px solid rgba(0, 255, 157, 0.2);
+            border-radius: 24px;
+            padding: 50px;
+            max-width: 800px;
+            margin: 60px auto 0;
+        }
+
+        .calculator-grid {
+            display: grid;
+            gap: 30px;
+        }
+
+        .input-group {
+            display: grid;
+            gap: 12px;
+        }
+
+        .input-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-gray);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .input-value {
+            color: var(--primary);
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .calculator-input {
+            width: 100%;
+            padding: 18px 24px;
+            background: rgba(0, 255, 157, 0.05);
+            border: 2px solid rgba(0, 255, 157, 0.2);
+            border-radius: 12px;
+            color: var(--text-light);
+            font-size: 18px;
+            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s;
+        }
+
+        .calculator-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: rgba(0, 255, 157, 0.08);
+            box-shadow: 0 0 0 4px rgba(0, 255, 157, 0.1);
+        }
+
+        .calculator-input::placeholder {
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .range-slider {
+            width: 100%;
+            height: 8px;
+            border-radius: 4px;
+            background: rgba(0, 255, 157, 0.1);
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        .range-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--primary);
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 255, 157, 0.4);
+            transition: all 0.2s;
+        }
+
+        .range-slider::-webkit-slider-thumb:hover {
+            transform: scale(1.2);
+            box-shadow: 0 6px 20px rgba(0, 255, 157, 0.6);
+        }
+
+        .range-slider::-moz-range-thumb {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--primary);
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 4px 12px rgba(0, 255, 157, 0.4);
+            transition: all 0.2s;
+        }
+
+        .range-slider::-moz-range-thumb:hover {
+            transform: scale(1.2);
+            box-shadow: 0 6px 20px rgba(0, 255, 157, 0.6);
+        }
+
+        .emi-result {
+            background: linear-gradient(135deg, rgba(0, 255, 157, 0.1), rgba(0, 255, 157, 0.05));
+            border: 2px solid rgba(0, 255, 157, 0.3);
+            border-radius: 16px;
+            padding: 40px;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .emi-amount {
+            font-size: 56px;
+            font-weight: 900;
+            color: var(--primary);
+            margin-bottom: 10px;
+            letter-spacing: -2px;
+        }
+
+        .emi-label {
+            font-size: 14px;
+            color: var(--text-gray);
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .emi-breakdown {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .breakdown-item {
+            text-align: center;
+        }
+
+        .breakdown-value {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-light);
+            margin-bottom: 8px;
+        }
+
+        .breakdown-label {
+            font-size: 12px;
+            color: var(--text-gray);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .contact-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .contact-card:hover {
+            border-color: rgba(0, 255, 157, 0.3);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(0, 255, 157, 0.15);
+        }
+
+        .contact-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .contact-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .contact-detail {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--primary);
+            margin: 10px 0;
+        }
+
+        .contact-detail a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .contact-info {
+            color: var(--text-gray);
+            line-height: 1.8;
+        }
+
+        .map-wrap {
+            border-radius: 24px;
+            overflow: hidden;
+            height: 500px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .map-wrap iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-card);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 60px 40px 30px;
+        }
+
+        .footer-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 60px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h3 {
+            font-size: 24px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), #00ccff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 12px;
+            color: var(--text-gray);
+            font-size: 14px;
+        }
+
+        .footer-section a {
+            color: var(--text-gray);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+            color: var(--text-gray);
+            font-size: 14px;
+        }
+
+        /* Floating Action Bar */
+        .floating-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 999;
+            padding: 15px 0;
+        }
+
+        .floating-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 0 20px;
+        }
+
+        .action-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            color: var(--text-light);
+            text-decoration: none;
+            transition: all 0.3s;
+            padding: 8px 16px;
+            border-radius: 8px;
+        }
+
+        .action-btn:hover {
+            background: rgba(0, 255, 157, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .action-icon {
+            font-size: 24px;
+        }
+
+        .action-label {
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .btn-call:hover { color: #4CAF50; }
+        .btn-whatsapp:hover { color: #25D366; }
+        .btn-instagram:hover { color: #E4405F; }
+        .btn-facebook:hover { color: #1877F2; }
+        .btn-location:hover { color: var(--primary); }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .hero h1 {
+                font-size: 60px;
+            }
+
+            .features-grid,
+            .models-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-content {
+                padding: 15px 20px;
+            }
+
+            .nav-links {
+                gap: 20px;
+            }
+
+            .section {
+                padding: 60px 20px;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero-subtitle {
+                font-size: 18px;
+            }
+
+            .section-title {
+                font-size: 40px;
+            }
+
+            .features-grid,
+            .models-grid,
+            .contact-grid,
+            .deals {
+                grid-template-columns: 1fr;
+            }
+
+            .emi-calculator {
+                padding: 30px 20px;
+            }
+
+            .emi-amount {
+                font-size: 40px;
+            }
+
+            .emi-breakdown {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .showroom-content {
+                height: 500px;
+                background-attachment: scroll;
+            }
+
+            .showroom-title {
+                font-size: 40px;
+            }
+
+            .showroom-subtitle {
+                font-size: 16px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .floating-content {
+                justify-content: space-between;
+                gap: 5px;
+            }
+
+            .action-btn {
+                padding: 5px 10px;
+            }
+
+            .action-icon {
+                font-size: 20px;
+            }
+
+            .action-label {
+                font-size: 9px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav id="nav">
+        <div class="nav-content">
+            <div class="logo">
+                <img src="logo.png" alt="Kavya Automobile">
+                <span class="logo-text">KAVYA</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#models">Models</a></li>
+                <li><a href="#emi-calculator">EMI Calculator</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="tel:+917781021237" class="cta-btn">Book Now</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-tag">⚡ AUTHORIZED E-GARUDA DEALER</div>
+                <h1>
+                    Premium<br>
+                    <span class="gradient-text">Electric Scooters</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Experience the future of mobility with E-Garuda electric scooters. Zero emissions, maximum performance.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#models" class="btn btn-primary">Explore Models</a>
+                    <a href="https://wa.me/917781021237?text=Hi, I'm interested in E-Garuda electric scooters" class="btn btn-outline">WhatsApp Us</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <img src="Hero_Scooter.png" alt="E-Garuda Electric Scooter" class="hero-image">
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-header">
+            <span class="section-tag">WHY CHOOSE E-GARUDA</span>
+            <h2 class="section-title">Ride Into The Future</h2>
+            <p class="section-subtitle">Experience premium electric mobility with cutting-edge technology</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3 class="feature-title">High Performance</h3>
+                <p class="feature-desc">Powerful 1000W-1200W motors delivering speeds up to 55 km/h with superior acceleration.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔋</div>
+                <h3 class="feature-title">Long Range Battery</h3>
+                <p class="feature-desc">Advanced 60V/72V battery systems for extended range and reliability.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💰</div>
+                <h3 class="feature-title">Zero Running Cost</h3>
+                <p class="feature-desc">Save thousands on fuel. Only ₹1-2 per charge compared to petrol scooters.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🛡️</div>
+                <h3 class="feature-title">Comprehensive Warranty</h3>
+                <p class="feature-desc">Complete warranty coverage with authorized service support in Jehanabad.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌍</div>
+                <h3 class="feature-title">Eco-Friendly</h3>
+                <p class="feature-desc">Zero emissions, zero pollution. Contribute to a cleaner environment.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔧</div>
+                <h3 class="feature-title">Low Maintenance</h3>
+                <p class="feature-desc">Minimal service requirements compared to traditional scooters.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="showroom-section">
+        <div class="showroom-content">
+            <div class="showroom-overlay">
+                <div class="showroom-text">
+                    <span class="section-tag">OUR SHOWROOM</span>
+                    <h2 class="showroom-title">Visit Kavya Automobile</h2>
+                    <p class="showroom-subtitle">
+                        Experience our premium collection of E-Garuda electric scooters in person. 
+                        All models available for test ride in Jehanabad.
+                    </p>
+                    <a href="#contact" class="btn btn-primary">Get Directions</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="models">
+        <div class="section-header">
+            <span class="section-tag">OUR COLLECTION</span>
+            <h2 class="section-title">Choose Your Ride</h2>
+            <p class="section-subtitle">Premium E-Garuda electric scooters for every style and need</p>
+        </div>
+        <div class="models-grid">
+            <div class="model-card">
+                <div class="model-badge">BEST SELLER</div>
+                <div class="model-image-wrap">
+                    <img src="G-One.jpeg" alt="E-Garuda G-One" class="model-image">
+                </div>
+                <div class="model-info">
+                    <div class="model-brand">E-GARUDA</div>
+                    <h3 class="model-name">G-One</h3>
+                    <p class="model-tagline">Power & Performance</p>
+                    <ul class="model-specs">
+                        <li><span class="spec-icon">⚡</span> Controller: 60V/72V</li>
+                        <li><span class="spec-icon">🔋</span> Motor: 1200W</li>
+                        <li><span class="spec-icon">💨</span> Speed: 50-55 km/h</li>
+                        <li><span class="spec-icon">🛞</span> Tyre: 90-90-12</li>
+                    </ul>
+                    <div class="model-actions">
+                        <a href="tel:+917781021237" class="btn btn-primary btn-small">Book Now</a>
+                        <a href="https://wa.me/917781021237?text=I'm interested in G-One" class="btn btn-outline btn-small">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="model-card">
+                <div class="model-badge">RETRO STYLE</div>
+                <div class="model-image-wrap">
+                    <img src="QTEC.jpeg" alt="E-Garuda QTEC" class="model-image">
+                </div>
+                <div class="model-info">
+                    <div class="model-brand">E-GARUDA</div>
+                    <h3 class="model-name">QTEC</h3>
+                    <p class="model-tagline">Classic Design</p>
+                    <ul class="model-specs">
+                        <li><span class="spec-icon">⚡</span> Controller: 60V/72V</li>
+                        <li><span class="spec-icon">🔋</span> Motor: 1200W</li>
+                        <li><span class="spec-icon">💨</span> Speed: 50-55 km/h</li>
+                        <li><span class="spec-icon">🛞</span> Tyre: 90-90-12</li>
+                    </ul>
+                    <div class="model-actions">
+                        <a href="tel:+917781021237" class="btn btn-primary btn-small">Book Now</a>
+                        <a href="https://wa.me/917781021237?text=I'm interested in QTEC" class="btn btn-outline btn-small">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="model-card">
+                <div class="model-badge">SPORT</div>
+                <div class="model-image-wrap">
+                    <img src="G-Pro.png" alt="E-Garuda G-Pro" class="model-image">
+                </div>
+                <div class="model-info">
+                    <div class="model-brand">E-GARUDA</div>
+                    <h3 class="model-name">G-Pro</h3>
+                    <p class="model-tagline">Sport Edition</p>
+                    <ul class="model-specs">
+                        <li><span class="spec-icon">⚡</span> Controller: 48V/60V/72V</li>
+                        <li><span class="spec-icon">🔋</span> Motor: 1000W</li>
+                        <li><span class="spec-icon">💨</span> Speed: 40-45 km/h</li>
+                        <li><span class="spec-icon">🛞</span> Tyre: 90-100-10</li>
+                    </ul>
+                    <div class="model-actions">
+                        <a href="tel:+917781021237" class="btn btn-primary btn-small">Book Now</a>
+                        <a href="https://wa.me/917781021237?text=I'm interested in G-Pro" class="btn btn-outline btn-small">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="offer">
+        <div class="offer-content">
+            <h2 class="offer-title">🔥 बंपर ऑफ़र - Limited Time!</h2>
+            <div class="deals">
+                <div class="deal">
+                    <div class="deal-price">₹99,999</div>
+                    <div class="deal-desc">3 इलेक्ट्रिक स्कूटी (Single Light)</div>
+                </div>
+                <div class="deal">
+                    <div class="deal-price">₹1,05,000</div>
+                    <div class="deal-desc">3 इलेक्ट्रिक स्कूटी (Double Light)</div>
+                </div>
+            </div>
+            <p style="margin-top: 30px; color: rgba(0,0,0,0.7); font-size: 16px; font-weight: 600;">
+                उचित बिल, वारंटी और सर्विस सपोर्ट के साथ
+            </p>
+        </div>
+    </section>
+
+    <section class="section" id="emi-calculator">
+        <div class="section-header">
+            <span class="section-tag">PLAN YOUR PURCHASE</span>
+            <h2 class="section-title">EMI Calculator</h2>
+            <p class="section-subtitle">Calculate your monthly EMI and plan your budget</p>
+        </div>
+        
+        <div class="emi-calculator">
+            <div class="calculator-grid">
+                <div class="input-group">
+                    <label class="input-label">
+                        <span>Vehicle Price</span>
+                        <span class="input-value" id="priceDisplay">₹35,000</span>
+                    </label>
+                    <input type="number" id="vehiclePrice" class="calculator-input" placeholder="Enter vehicle price" value="35000" min="10000" max="200000" step="1000">
+                </div>
+
+                <div class="input-group">
+                    <label class="input-label">
+                        <span>Down Payment</span>
+                        <span class="input-value" id="downPaymentDisplay">₹10,000</span>
+                    </label>
+                    <input type="number" id="downPayment" class="calculator-input" placeholder="Enter down payment" value="10000" min="0" max="200000" step="1000">
+                </div>
+
+                <div class="input-group">
+                    <label class="input-label">
+                        <span>Interest Rate (% per year)</span>
+                        <span class="input-value" id="interestDisplay">12%</span>
+                    </label>
+                    <input type="range" id="interestRate" class="range-slider" min="8" max="18" step="0.5" value="12">
+                </div>
+
+                <div class="input-group">
+                    <label class="input-label">
+                        <span>Loan Tenure (months)</span>
+                        <span class="input-value" id="tenureDisplay">12 months</span>
+                    </label>
+                    <input type="range" id="loanTenure" class="range-slider" min="6" max="36" step="1" value="12">
+                </div>
+            </div>
+
+            <div class="emi-result">
+                <div class="emi-label">Monthly EMI</div>
+                <div class="emi-amount" id="emiAmount">₹2,213</div>
+                
+                <div class="emi-breakdown">
+                    <div class="breakdown-item">
+                        <div class="breakdown-value" id="totalAmount">₹26,558</div>
+                        <div class="breakdown-label">Total Amount</div>
+                    </div>
+                    <div class="breakdown-item">
+                        <div class="breakdown-value" id="principalAmount">₹25,000</div>
+                        <div class="breakdown-label">Principal</div>
+                    </div>
+                    <div class="breakdown-item">
+                        <div class="breakdown-value" id="interestAmount">₹1,558</div>
+                        <div class="breakdown-label">Total Interest</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="contact">
+        <div class="section-header">
+            <span class="section-tag">GET IN TOUCH</span>
+            <h2 class="section-title">Visit Our Showroom</h2>
+            <p class="section-subtitle">Experience E-Garuda scooters in person</p>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-card">
+                <div class="contact-icon">📞</div>
+                <h3 class="contact-title">Phone / WhatsApp</h3>
+                <div class="contact-detail"><a href="tel:+917781021237">+91 7781021237</a></div>
+                <div class="contact-detail"><a href="tel:06114451310">06114451310</a></div>
+                <p class="contact-info">Available 9 AM - 8 PM</p>
+            </div>
+            <div class="contact-card">
+                <div class="contact-icon">📧</div>
+                <h3 class="contact-title">Email & Social</h3>
+                <p class="contact-info" style="color: var(--primary); font-size: 13px; word-break: break-all; margin: 15px 0;">
+                    kavyaautomobile2024@gmail.com
+                </p>
+                <p class="contact-info">📷 @kavya_ev_automobile_jehanabad</p>
+            </div>
+            <div class="contact-card">
+                <div class="contact-icon">📍</div>
+                <h3 class="contact-title">Location</h3>
+                <p class="contact-info" style="line-height: 1.8;">
+                    Kavya Automobile<br>
+                    Infront Of Om Vivah Bhawan<br>
+                    Professor Colony, Jehanabad<br>
+                    Bihar - 804408
+                </p>
+            </div>
+        </div>
+        <div class="map-wrap">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d1073.1287962167496!2d84.98911914567996!3d25.218035492796414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjXCsDEzJzA0LjYiTiA4NMKwNTknMjMuNCJF!5e0!3m2!1sen!2sin!4v1770899556499!5m2!1sen!2sin" allowfullscreen loading="lazy"></iframe>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3>KAVYA AUTOMOBILE</h3>
+                <p style="color: var(--text-gray); line-height: 1.8;">
+                    Your authorized E-Garuda dealer in Jehanabad. Genuine products with complete service support.
+                </p>
+            </div>
+            <div class="footer-section">
+                <h4 style="color: var(--text-light); margin-bottom: 20px;">Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#models">Models</a></li>
+                    <li><a href="#emi-calculator">EMI Calculator</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4 style="color: var(--text-light); margin-bottom: 20px;">Models</h4>
+                <ul>
+                    <li>G-One - 1200W</li>
+                    <li>QTEC - Retro</li>
+                    <li>G-Pro - Sport</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4 style="color: var(--text-light); margin-bottom: 20px;">Contact</h4>
+                <ul>
+                    <li>📞 +91 7781021237</li>
+                    <li>📞 06114451310</li>
+                    <li>📧 kavyaautomobile2024@gmail.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Kavya Automobile. Authorized E-Garuda Dealer, Jehanabad. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <div class="floating-bar">
+        <div class="floating-content">
+            <a href="tel:+917781021237" class="action-btn btn-call">
+                <div class="action-icon">📞</div>
+                <span class="action-label">Call</span>
+            </a>
+            <a href="https://wa.me/917781021237?text=Hi, I'm interested in E-Garuda electric scooters" target="_blank" class="action-btn btn-whatsapp">
+                <div class="action-icon">💬</div>
+                <span class="action-label">WhatsApp</span>
+            </a>
+            <a href="https://www.instagram.com/kavya_ev_automobile_jehanabad/" target="_blank" class="action-btn btn-instagram">
+                <div class="action-icon">📷</div>
+                <span class="action-label">Instagram</span>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61588080683755" target="_blank" class="action-btn btn-facebook">
+                <div class="action-icon">👍</div>
+                <span class="action-label">Facebook</span>
+            </a>
+            <a href="https://www.google.com/maps/place/25%C2%B013'04.6%22N+84%C2%B059'23.4%22E/@25.218035,84.9891191,19z" target="_blank" class="action-btn btn-location">
+                <div class="action-icon">📍</div>
+                <span class="action-label">Location</span>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scroll nav effect
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scroll for links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // EMI Calculator with Real-time Typing
+        const vehiclePriceInput = document.getElementById('vehiclePrice');
+        const downPaymentInput = document.getElementById('downPayment');
+        const interestRateInput = document.getElementById('interestRate');
+        const loanTenureInput = document.getElementById('loanTenure');
+
+        const priceDisplay = document.getElementById('priceDisplay');
+        const downPaymentDisplay = document.getElementById('downPaymentDisplay');
+        const interestDisplay = document.getElementById('interestDisplay');
+        const tenureDisplay = document.getElementById('tenureDisplay');
+
+        const emiAmountDisplay = document.getElementById('emiAmount');
+        const totalAmountDisplay = document.getElementById('totalAmount');
+        const principalAmountDisplay = document.getElementById('principalAmount');
+        const interestAmountDisplay = document.getElementById('interestAmount');
+
+        function formatCurrency(amount) {
+            return '₹' + Math.round(amount).toLocaleString('en-IN');
+        }
+
+        function calculateEMI() {
+            const vehiclePrice = parseFloat(vehiclePriceInput.value) || 0;
+            const downPayment = parseFloat(downPaymentInput.value) || 0;
+            const interestRate = parseFloat(interestRateInput.value) || 0;
+            const tenure = parseInt(loanTenureInput.value) || 1;
+
+            // Update displays
+            priceDisplay.textContent = formatCurrency(vehiclePrice);
+            downPaymentDisplay.textContent = formatCurrency(downPayment);
+            interestDisplay.textContent = interestRate + '%';
+            tenureDisplay.textContent = tenure + ' months';
+
+            // Calculate principal amount
+            const principal = vehiclePrice - downPayment;
+
+            // EMI Formula: [P x R x (1+R)^N]/[(1+R)^N-1]
+            const monthlyRate = interestRate / (12 * 100);
+            
+            let emi = 0;
+            let totalPayment = 0;
+            let totalInterest = 0;
+
+            if (principal > 0 && monthlyRate > 0) {
+                const factor = Math.pow(1 + monthlyRate, tenure);
+                emi = (principal * monthlyRate * factor) / (factor - 1);
+                totalPayment = emi * tenure;
+                totalInterest = totalPayment - principal;
+            } else {
+                emi = principal / tenure;
+                totalPayment = principal;
+                totalInterest = 0;
+            }
+
+            // Update results
+            emiAmountDisplay.textContent = formatCurrency(emi);
+            totalAmountDisplay.textContent = formatCurrency(totalPayment);
+            principalAmountDisplay.textContent = formatCurrency(principal);
+            interestAmountDisplay.textContent = formatCurrency(totalInterest);
+        }
+
+        // Add event listeners for real-time calculation
+        vehiclePriceInput.addEventListener('input', calculateEMI);
+        downPaymentInput.addEventListener('input', calculateEMI);
+        interestRateInput.addEventListener('input', calculateEMI);
+        loanTenureInput.addEventListener('input', calculateEMI);
+
+        // Initial calculation
+        calculateEMI();
+    </script>
+</body>
+</html>
